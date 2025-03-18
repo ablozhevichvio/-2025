@@ -1,25 +1,33 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35312.102
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "z6", "z6.csproj", "{84481CAB-DFDA-4CE1-B2B0-85AC0B2DBDD4}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{84481CAB-DFDA-4CE1-B2B0-85AC0B2DBDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84481CAB-DFDA-4CE1-B2B0-85AC0B2DBDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84481CAB-DFDA-4CE1-B2B0-85AC0B2DBDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84481CAB-DFDA-4CE1-B2B0-85AC0B2DBDD4}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A80101A5-B08A-4EA1-B818-153DD6EC9CDC}
-	EndGlobalSection
-EndGlobal
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите количество баллов (от 0 до 100): ");
+        int score = int.Parse(Console.ReadLine());
+
+        if (score < 0 || score > 100)
+        {
+            Console.WriteLine("Ошибка: баллы должны быть в диапазоне от 0 до 100.");
+            return;
+        }
+
+        switch (score)
+        {
+            case int n when (n >= 90 && n <= 100):
+                Console.WriteLine("Оценка: отлично");
+                break;
+            case int n when (n >= 70 && n <= 89):
+                Console.WriteLine("Оценка: хорошо");
+                break;
+            case int n when (n >= 50 && n <= 69):
+                Console.WriteLine("Оценка: удовлетворительно");
+                break;
+            default:
+                Console.WriteLine("Оценка: неудовлетворительно");
+                break;
+        }
+    }
+}
+
